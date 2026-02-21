@@ -44,7 +44,7 @@ export default function Hero() {
             </div>
             <p className="text-lg font-semibold text-center mt-20">Playground:</p>
             <p className="text-center text-[#757575] dark:text-gray-400">
-                🧑🏻‍💻 React, React Native, Ionic, Cordova, Next JS, Vue.js, Vitesse
+                🧑🏻‍💻 React, React Native, Expo, Next JS, Astro, ExpresssJS, Supabase, PostgreSQL
             </p>
         </section>
     );
