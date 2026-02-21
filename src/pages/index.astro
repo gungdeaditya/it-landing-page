@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero";
+import { TechStackSection, WorkExperienceSection, RecentWorkSection, ContactMeSection } from "../components/Sections";
+---
+
+<Layout title="Gungde Aditya | Front-End Developer">
+  <div class="min-h-screen">
+    <Hero client:load />
+    <TechStackSection client:visible />
+    <WorkExperienceSection client:visible />
+    <RecentWorkSection client:visible />
+    <ContactMeSection client:visible />
+  </div>
+</Layout>
