@@ -13,28 +13,31 @@ export default function Navbar() {
     return (
         <header
             aria-label="Site Header"
-            className="bg-white/80 dark:bg-dark/80 backdrop-blur-md fixed w-screen z-50 py-4 px-4 xl:px-0 shadow-sm border-b border-border/40"
+            className="bg-white dark:bg-dark fixed w-screen z-10 py-6 px-4 xl:px-0 shadow-sm lg:shadow-none transition-all duration-200"
         >
             <div className="mx-auto max-w-screen-xl flex items-center justify-between">
-                <div className="flex items-center space-x-4">
+                <div className="flex space-x-2">
                     <a href="/" className="cursor-pointer" onClick={closeMenus}>
-                        <h1 className="font-bold text-2xl lg:text-3xl tracking-tight transition-transform hover:scale-105">
-                            <span className="text-foreground">GUNG </span>
-                            <span className="bg-gradient-to-r bg-clip-text from-blue-500 to-indigo-600 dark:from-sky-400 dark:to-indigo-500 text-transparent">
+                        <h1 className="font-bold text-3xl text-black tracking-tight">
+                            <span className="dark:text-white">GUNG </span>
+                            <span className="bg-gradient-to-r bg-clip-text from-darkAccent to-primary-700 text-transparent">
                                 .dev
                             </span>
                         </h1>
                     </a>
+                    <LampButton />
                 </div>
                 <div className="lg:flex items-center">
-                    <nav aria-label="Site Nav" className="hidden lg:block mr-8">
-                        <ul className="flex items-center gap-8 text-sm font-semibold">
+                    <nav aria-label="Site Nav" className="hidden lg:block">
+                        <ul className="flex items-center gap-6 text-sm font-semibold">
                             <li>
                                 <NavLink href="/">Home</NavLink>
                             </li>
+
                             <li>
                                 <NavLink href="/about">About</NavLink>
                             </li>
+
                             <li>
                                 <NavLink href="/contact">Contact</NavLink>
                             </li>
@@ -42,17 +45,15 @@ export default function Navbar() {
                     </nav>
 
                     <div className="flex items-center gap-4">
-                        <LampButton />
                         <div className="block lg:hidden">
                             <button
                                 onClick={() => setOpenMenus((prev) => !prev)}
-                                className="rounded p-2 text-foreground transition bg-secondary/50 hover:bg-secondary"
-                                aria-label="Toggle Menu"
+                                className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
                             >
                                 {openMenus ? (
-                                    <GrClose className="text-foreground w-5 h-5" />
+                                    <GrClose className="text-black" />
                                 ) : (
-                                    <GiHamburgerMenu className="text-foreground w-5 h-5" />
+                                    <GiHamburgerMenu className="text-black" />
                                 )}
                             </button>
                         </div>
@@ -68,7 +69,7 @@ export default function Navbar() {
                         exit={{ height: 0, opacity: 0 }}
                         className="block lg:hidden overflow-hidden"
                     >
-                        <ul className="flex flex-col gap-6 text-sm font-semibold w-full pt-6 pb-4 px-2">
+                        <ul className="flex flex-col gap-6 text-sm font-semibold w-full pt-6 px-2">
                             <li>
                                 <NavLink href="/" onClick={closeMenus}>
                                     Home

@@ -19,157 +19,121 @@ export default function ContactMe() {
         control,
         register,
         handleSubmit,
-        formState: { errors, isSubmitting },
+        formState: { errors },
         reset,
-    } = useForm<FormValues>({
-        defaultValues: {
-            projectType: "Website"
-        }
-    });
+    } = useForm<FormValues>();
 
-    const sendEmail = async () => {
-        if (!form.current) return;
-        try {
-            const result = await emailjs.sendForm(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_id",
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_id",
-                form.current,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID || "public_id"
+    const sendEmail = () => {
+        return emailjs
+            .sendForm(
+                (import.meta.env.PUBLIC_EMAILJS_SERVICE_ID as string) || "service_id",
+                (import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID as string) || "template_id",
+                form.current!,
+                (import.meta.env.PUBLIC_EMAILJS_PUBLIC_ID as string) || "public_id"
+            )
+            .then(
+                (result) => {
+                    reset();
+                    console.log(result.text);
+                },
+                (error) => {
+                    console.log(error.text);
+                }
             );
-            reset();
-            console.log(result.text);
-        } catch (error: any) {
-            console.log(error.text);
-            throw new Error(error.text);
-        }
     };
 
-    const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    const onSubmit: SubmitHandler<FormValues> = (data) => {
         toast.promise(sendEmail(), {
-            loading: "Sending message, please wait...",
-            success: "Message successfully sent!",
-            error: "Oops, there was an error sending your message.",
+            loading: "Send first, please wait...",
+            success: "Message successfully send!",
+            error: "Opps, there was an error!",
         });
     };
 
-    const inputClasses =
-        "flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-shadow";
-
-    const labelClasses = "block text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 mb-2";
+    const inputClassNames = "w-full border-b-[1px] border-b-gray-400 bg-transparent py-2 focus:outline-none focus:border-b-primary-500 transition-colors dark:text-gray-200";
+    const labelClassNames = "text-sm text-gray-500 dark:text-[#90a4ae] mb-1 font-semibold block";
 
     return (
-        <main className="min-h-screen grid place-items-center py-32 px-4">
-            <div className="w-full max-w-4xl bg-card border border-border shadow-lg rounded-2xl p-8 md:p-12">
-                <div className="text-center space-y-4 mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                        Send me a message!
-                    </h1>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        Got a question, proposal, or just want to say hello? Go ahead.
-                    </p>
+        <main className="min-h-screen grid place-items-center py-[20vh] mt-16">
+            <form
+                ref={form}
+                onSubmit={handleSubmit(onSubmit)}
+                className="max-w-screen-xl 2xl:w-5/12 flex flex-col space-y-4 items-center px-8 lg:px-0"
+            >
+                <h1 className="text-3xl 2xl:text-5xl font-bold text-center">
+                    Send me a message!
+                </h1>
+                <h2 className="text-center text-[#757575] dark:text-gray-400">
+                    Got a question or proposal, or just want to say hello? Go ahead.
+                </h2>
+                <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 pt-20">
+
+                    <div className="relative w-full min-w-[200px]">
+                        <label className={labelClassNames}>Name</label>
+                        <input
+                            {...register("name", { required: true })}
+                            className={inputClassNames}
+                            required
+                        />
+                    </div>
+
+                    <div className="relative w-full min-w-[200px]">
+                        <label className={labelClassNames}>Email</label>
+                        <input
+                            type="email"
+                            {...register("email", { required: true })}
+                            className={inputClassNames}
+                            required
+                        />
+                    </div>
+
+                    <div className="relative w-full min-w-[200px]">
+                        <label className={labelClassNames}>Phone</label>
+                        <input
+                            {...register("phone")}
+                            className={inputClassNames}
+                            placeholder="example: (+62) xxx xxxx"
+                        />
+                    </div>
+
+                    <div className="relative w-full min-w-[200px]">
+                        <label className={labelClassNames}>Type of Project</label>
+                        <Controller
+                            name="projectType"
+                            control={control}
+                            render={({ field }) => (
+                                <select
+                                    {...field}
+                                    className={inputClassNames}
+                                >
+                                    <option value="Website" className="dark:bg-dark">Website</option>
+                                    <option value="Mobile" className="dark:bg-dark">Mobile</option>
+                                    <option value="Both" className="dark:bg-dark">Both</option>
+                                </select>
+                            )}
+                        />
+                    </div>
+
+                    <div className="lg:col-span-2 relative w-full min-w-[200px]">
+                        <label className={labelClassNames}>Additional Details</label>
+                        <textarea
+                            {...register("notes", { required: true })}
+                            required
+                            rows={4}
+                            className={twMerge(inputClassNames, "resize-y")}
+                            placeholder="Hi, I think we need to develop some web/app for our products at Company X. How soon can you hop on to discuss this?"
+                        />
+                    </div>
+
                 </div>
-
-                <form
-                    ref={form}
-                    onSubmit={handleSubmit(onSubmit)}
-                    className="space-y-8"
+                <button
+                    type="submit"
+                    className="transition-all mt-10 w-40 text-gray-900 border border-gray-800 hover:bg-gray-900 hover:text-white dark:text-gray-100 dark:border-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 text-center"
                 >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="space-y-2">
-                            <label htmlFor="name" className={labelClasses}>
-                                Name <span className="text-destructive">*</span>
-                            </label>
-                            <input
-                                id="name"
-                                {...register("name", { required: true })}
-                                className={twMerge(inputClasses, errors.name && "border-destructive focus-visible:ring-destructive")}
-                                placeholder="John Doe"
-                            />
-                            {errors.name && <span className="text-destructive text-xs">This field is required</span>}
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="email" className={labelClasses}>
-                                Email <span className="text-destructive">*</span>
-                            </label>
-                            <input
-                                id="email"
-                                type="email"
-                                {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-                                className={twMerge(inputClasses, errors.email && "border-destructive focus-visible:ring-destructive")}
-                                placeholder="john@example.com"
-                            />
-                            {errors.email && <span className="text-destructive text-xs">Valid email is required</span>}
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="phone" className={labelClasses}>
-                                Phone
-                            </label>
-                            <input
-                                id="phone"
-                                {...register("phone")}
-                                className={inputClasses}
-                                placeholder="+62 812 3456 7890"
-                            />
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="projectType" className={labelClasses}>
-                                Type of Project
-                            </label>
-                            <Controller
-                                name="projectType"
-                                control={control}
-                                render={({ field }) => (
-                                    <select
-                                        {...field}
-                                        className={inputClasses}
-                                    >
-                                        <option value="Website">Website</option>
-                                        <option value="Mobile">Mobile Application</option>
-                                        <option value="Both">Both (Fullstack & Mobile)</option>
-                                        <option value="Other">Other Consulting</option>
-                                    </select>
-                                )}
-                            />
-                        </div>
-
-                        <div className="md:col-span-2 space-y-2">
-                            <label htmlFor="notes" className={labelClasses}>
-                                Additional Details <span className="text-destructive">*</span>
-                            </label>
-                            <textarea
-                                id="notes"
-                                {...register("notes", { required: true })}
-                                className={twMerge(inputClasses, "min-h-[150px] resize-y", errors.notes && "border-destructive focus-visible:ring-destructive")}
-                                placeholder="Hi, I think we need to develop a web/app for our products. How soon can we hop on a call to discuss this?"
-                            />
-                            {errors.notes && <span className="text-destructive text-xs">Please provide some details for your inquiry</span>}
-                        </div>
-                    </div>
-
-                    <div className="flex justify-center pt-6">
-                        <button
-                            type="submit"
-                            disabled={isSubmitting}
-                            className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-12 uppercase tracking-wider"
-                        >
-                            {isSubmitting ? "Sending..." : "Submit Message"}
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <Toaster
-                position="bottom-right"
-                toastOptions={{
-                    style: {
-                        background: 'hsl(var(--card))',
-                        color: 'hsl(var(--card-foreground))',
-                        border: '1px solid hsl(var(--border))',
-                    },
-                }}
-            />
+                    Submit
+                </button>
+            </form>
+            <Toaster />
         </main>
     );
 }
