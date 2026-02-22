@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { BsSunFill, BsSun, BsMoonFill } from "react-icons/bs";
 import IconButton from "./IconButton";
 
 const LampButton = () => {
-    const [theme, setTheme] = useState<"light" | "dark">("light");
+    const [theme, setTheme] = useState<"light" | "dark" | null>(null);
 
-    useEffect(() => {
-        // Initial theme check
-        const isDark = document.documentElement.classList.contains("dark");
-        setTheme(isDark ? "dark" : "light");
-    }, []);
-
-    const switchDarkModes = () => {
+    const switchDarkModes = useCallback(() => {
         const newTheme = theme === "dark" ? "light" : "dark";
         setTheme(newTheme);
 
@@ -21,9 +15,20 @@ const LampButton = () => {
 
         // Optional: save to localStorage
         if (typeof localStorage !== "undefined") {
-            localStorage.setItem("theme", isDark ? "dark" : "light");
+            localStorage.setItem("theme", newTheme);
         }
-    };
+    }, [theme]);
+
+    useEffect(() => {
+        const storedTheme = localStorage.getItem("theme");
+        if (storedTheme === "dark" || storedTheme === "light") {
+            setTheme(storedTheme);
+        } else {
+            setTheme("light");
+        }
+    }, []);
+
+    if (!theme) return null;
 
     return (
         <IconButton onClick={switchDarkModes}>
