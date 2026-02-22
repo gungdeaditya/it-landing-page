@@ -8,7 +8,7 @@ const technologies = [
     { name: "CSS", left: "20%", top: "15%" },
     { name: "Javascript", left: "45%", top: "20%" },
     { name: "Typescript", left: "75%", top: "15%" },
-    { name: "Flutter", left: "85%", top: "30%" },
+    { name: "React Native", left: "85%", top: "30%" },
     { name: "React js", left: "10%", top: "35%" },
     { name: "Express js", left: "35%", top: "35%" },
     { name: "Next js", left: "65%", top: "35%" },
@@ -16,13 +16,10 @@ const technologies = [
     { name: "Tailwind CSS", left: "25%", top: "50%" },
     { name: "Material UI", left: "55%", top: "50%" },
     { name: "Radix UI", left: "80%", top: "60%" },
-    { name: "Styled Components", left: "5%", top: "65%" },
     { name: "Redux", left: "40%", top: "65%" },
     { name: "PostgreSQL", left: "65%", top: "75%" },
     { name: "Git", left: "90%", top: "70%" },
     { name: "CI/CD", left: "30%", top: "80%" },
-    { name: "Go", left: "55%", top: "85%" },
-    { name: "Go Fiber", left: "75%", top: "90%" },
 ];
 
 export default function Hero() {
@@ -85,8 +82,8 @@ export default function Hero() {
                 </div>
 
                 {/* Right Column Layout & Badges */}
-                <div className="relative h-[450px] lg:h-[600px] w-full flex items-center justify-center mt-12 lg:mt-0 max-w-lg lg:max-w-none mx-auto">
-                    <p className="absolute top-10 lg:top-24 right-0 lg:right-10 text-sm text-gray-500 dark:text-gray-400 text-right z-0 hidden sm:block mb-4">
+                <div className="relative h-[450px] lg:h-[600px] w-full hidden lg:flex items-center justify-center mt-12 lg:mt-0 max-w-lg lg:max-w-none mx-auto">
+                    <p className="absolute top-10 lg:top-24 right-0 lg:right-10 text-sm text-gray-500 dark:text-gray-400 text-right z-0 hidden lg:block mb-4">
                         some technologies and practices I'm familiar with..
                     </p>
 

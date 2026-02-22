@@ -31,13 +31,13 @@ export function RecentWorkSection() {
     const datas = [
         {
             title: "BRI - Loan Eform System",
-            techStacks: ["Nextjs", "TailwindCSS"],
+            techStacks: ["Nextjs", "TailwindCSS", "MySQL"],
             desc: "Loan Eform System, making an Eksternal of Brispot Platform, allowing users to propose loan, and tracking its system",
             actions: [{ title: "loan.bri.co.id", href: "https://loan.bri.co.id" }],
         },
         {
             title: "YukJualBeli - E-Commerce",
-            techStacks: ["Mobile App", "React Native"],
+            techStacks: ["React Native", "VueJS", "MySQL"],
             desc: "E-commerce for UKM traders. A mobile app designed for users to transact goods managed by UKM players, can be found in the YukJualBeli application.",
             actions: [
                 { title: "yukjualbeli.com", href: "https://yukjualbeli.com" },
@@ -49,7 +49,7 @@ export function RecentWorkSection() {
         },
         {
             title: "HIPMINET",
-            techStacks: ["Mobile App", "React Native"],
+            techStacks: ["React Native"],
             desc: "An application aimed at members of HIPMI (Indonesian Young Entrepreneurs Association)",
             actions: [
                 {
@@ -60,7 +60,7 @@ export function RecentWorkSection() {
         },
         {
             title: "Marugame Udon App",
-            techStacks: ["Mobile App", "Payment Gateway"],
+            techStacks: ["React Native"],
             desc: "Application that supports the needs of Marugame customers in ordering menus, and related matters about merchants. Developing an online order feature equipped with a payment gateway.",
             actions: [
                 {
@@ -75,7 +75,7 @@ export function RecentWorkSection() {
         },
         {
             title: "Female In Action",
-            techStacks: ["Mobile App", "Tracker"],
+            techStacks: ["React Native"],
             desc: "Professional psychology consultant application intended for users who have serious problems related to mental illness. FIA support other features, such as: related events, psychological tracker, and news.",
             actions: [
                 {
@@ -86,7 +86,7 @@ export function RecentWorkSection() {
         },
         {
             title: "Klik Diabetes",
-            techStacks: ["Mobile App", "Medical Report", "IoT"],
+            techStacks: ["React Native", "ExpressJS", "MySQL"],
             desc: "Medical Report application, used to monitor diabetes symptoms, medication reminders, to health records. This application allows us to check diabetes information and its medical reports",
             actions: [
                 {
@@ -101,7 +101,7 @@ export function RecentWorkSection() {
         },
         {
             title: "Pruforce Mobile",
-            techStacks: ["Mobile App", "CRM"],
+            techStacks: ["React Native"],
             desc: "CRM application that is used by Prudential agents in managing customer development, conducting prospects and other matters related to Prudential products.",
             actions: [
                 {
@@ -116,7 +116,7 @@ export function RecentWorkSection() {
         },
         {
             title: "Kuman App",
-            techStacks: ["Mobile App", "UKM"],
+            techStacks: ["React Native", "MySQL"],
             desc: "An app for managing the rest of the Kuman product system. Give the opportunity of micro-segment of UKM to develop their business.",
             actions: [
                 {
@@ -127,7 +127,7 @@ export function RecentWorkSection() {
         },
         {
             title: "Procura GO",
-            techStacks: ["Mobile App", "E-Procurement"],
+            techStacks: ["React Native"],
             desc: "E-procurement app tool that is used to facilitate access, such as: Purchasing Requisition, Tender Management, until Purchasing Order",
             actions: [
                 {
@@ -259,16 +259,19 @@ export function TechStackSection() {
             desc: "I like to code things from scratch, and enjoy bringing ideas to life in the browser.",
             section_1_title: "Languages I speak:",
             section_1_desc:
-                "HTML, CSS, Tailwind CSS, SCSS, JavaScript, TypeScript, npm/yarn/pnpm",
+                "JavaScript, TypeScript",
             section_2_title: "Dev Tools and Framework",
             section_2_items: [
-                "React/Next JS/Vite",
-                "Vue JS, Vitesse, Pinia, Vite",
+                "HTML, CSS, Tailwind CSS, SCSS",
+                "npm, pnpm, bun",
+                "React/Next JS",
                 "Progressive Web Apps (PWA)",
                 "React Router",
-                "Radix UI, Headless UI, Shadcn UI",
-                "Redux/Saga/Toolkit",
-                "SWR/React Query",
+                "Radix UI, Tailwind CSS, Shadcn UI, Material UI",
+                "Zustand",
+                "React Hook Form",
+                "Redux, SWR/React Query",
+                "Zod",
                 "Vitest, React Testing Library",
             ],
         },
@@ -277,15 +280,17 @@ export function TechStackSection() {
             icon: <IoIosApps className="text-[36px]" color="black" />,
             desc: "I can create both sides apps, Android & iOS, using the hybrid framework that works really fast and maintainable",
             section_1_title: "Languages I speak:",
-            section_1_desc: "JavaScript, TypeScript, npm/yarn/pnpm",
+            section_1_desc: "JavaScript, TypeScript",
             section_2_title: "Dev Tools and Framework",
             section_2_items: [
-                "React Native/Expo",
+                "HTML, CSS, Tailwind CSS, SCSS",
+                "npm, pnpm, bun",
+                "React Native Expo",
                 "Native Wind, React Native Paper",
-                "React Navigation",
-                "Redux/Saga/Toolkit",
-                "Redux Toolkit Query",
-                "Flipper",
+                "Zustand",
+                "React Hook Form",
+                "Redux, SWR/React Query",
+                "Yup, Zod",
                 "Jest, React Testing Library",
             ],
         },
@@ -294,13 +299,15 @@ export function TechStackSection() {
             icon: <FaRocket className="text-[36px]" color="black" />,
             desc: "For the services and deployment way, I choose the perfect combination of CI/CD method",
             section_1_title: "Languages I speak:",
-            section_1_desc: "JavaScript, TypeScript, Node JS, npm/yarn/pnpm",
+            section_1_desc: "JavaScript, TypeScript, Node JS",
             section_2_title: "Dev Tools and Framework",
             section_2_items: [
+                "npm, pnpm, bun",
                 "Express",
                 "MySQL, PostgreSQL",
+                "Supabase self-hosted",
                 "Vercel, Netlify",
-                "Firebase, Various Analytics",
+                "Railway, Digital Ocean, AWS EC2, ECS",
                 "Slack, VS Code, Markdown, Git, GitHub/GitLab",
                 "GitHub Actions, Docker",
             ],
