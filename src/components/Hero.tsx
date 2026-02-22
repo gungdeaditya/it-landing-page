@@ -15,7 +15,7 @@ const technologies = [
     { name: "Astro", left: "90%", top: "45%" },
     { name: "Tailwind CSS", left: "25%", top: "50%" },
     { name: "Material UI", left: "55%", top: "50%" },
-    { name: "Radix UI", left: "80%", top: "60%" },
+    { name: "Shadcn UI", left: "80%", top: "60%" },
     { name: "Redux", left: "40%", top: "65%" },
     { name: "PostgreSQL", left: "65%", top: "75%" },
     { name: "Git", left: "90%", top: "70%" },
@@ -33,9 +33,9 @@ export default function Hero() {
                     <p className="text-gray-500 dark:text-gray-400 font-semibold tracking-widest text-sm mb-4 uppercase">
                         GUNGDE ADITYA
                     </p>
-                    <h1 className="text-5xl sm:text-6xl font-extrabold leading-[1.1] tracking-tight mb-6">
-                        Shipping <span className="text-primary-500">Quality Products</span> <br className="hidden sm:block" />
-                        As Fast As Possible
+                    <h1 className="text-5xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight mb-6">
+                        Engineered for <span className="bg-linear-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent">Quality.</span> <br />
+                        Built for <span className="bg-linear-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent">Speed.</span>
                     </h1>
                     <p className="text-[#757575] dark:text-gray-400 text-lg mb-8 leading-relaxed">
                         <span>{`Hi, I'm Gungde Aditya. Nice to meet you.`}</span>
