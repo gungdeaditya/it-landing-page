@@ -6,9 +6,16 @@ import Footer from "../components/layouts/Footer";
 interface Props {
 	title: string;
 	description?: string;
+	image?: string;
+	canonicalURL?: string;
 }
 
-const { title, description = "This is our profile data" } = Astro.props;
+const { 
+	title, 
+	description = "A versatile front-end developer based in Bali with 3 years of hands-on experience in building scalable and performant web applications.",
+	image = "/images/og-image.png", // We'll assume this image will be created later or use a generic one if it missing. 
+	canonicalURL = new URL(Astro.url.pathname, Astro.site).toString(),
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -21,7 +28,26 @@ const { title, description = "This is our profile data" } = Astro.props;
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="canonical" href={canonicalURL} />
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.site)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.site)} />
+		
+		<!-- Sitemap -->
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
 		<title>{title}</title>
 		
 		<!-- Google Fonts for Typography -->
