@@ -5,6 +5,7 @@ import { MdOutlineLaptopMac } from "react-icons/md";
 import { IoIosApps } from "react-icons/io";
 import HoverEffectImage from "../components/images/HoverEffectImage";
 import { twMerge } from "tailwind-merge";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export function ContactMeSection() {
     return (
@@ -29,19 +30,14 @@ export function ContactMeSection() {
 export function RecentWorkSection() {
     const datas = [
         {
+            title: "BRI - Loan Eform System",
+            techStacks: ["Nextjs", "TailwindCSS"],
             desc: "Loan Eform System, making an Eksternal of Brispot Platform, allowing users to propose loan, and tracking its system",
             actions: [{ title: "loan.bri.co.id", href: "https://loan.bri.co.id" }],
-            logo: (
-                <img
-                    width={80}
-                    height={40}
-                    src="/images/logo-bri.png"
-                    alt="Logo BRI"
-                // style={{ width: 200, height: 100 }}
-                />
-            ),
         },
         {
+            title: "YukJualBeli - E-Commerce",
+            techStacks: ["Mobile App", "React Native"],
             desc: "E-commerce for UKM traders. A mobile app designed for users to transact goods managed by UKM players, can be found in the YukJualBeli application.",
             actions: [
                 { title: "yukjualbeli.com", href: "https://yukjualbeli.com" },
@@ -50,17 +46,10 @@ export function RecentWorkSection() {
                     href: "https://play.google.com/store/apps/details?id=com.yukjualbeli.app",
                 },
             ],
-            logo: (
-                <img
-                    width={200}
-                    height={50}
-                    src="/images/logo-yukjualbeli.png"
-                    alt="Logo YukJualBeli"
-                    className="object-cover"
-                />
-            ),
         },
         {
+            title: "HIPMINET",
+            techStacks: ["Mobile App", "React Native"],
             desc: "An application aimed at members of HIPMI (Indonesian Young Entrepreneurs Association)",
             actions: [
                 {
@@ -68,20 +57,10 @@ export function RecentWorkSection() {
                     href: "https://apps.apple.com/id/app/hipminet/id1549669510",
                 },
             ],
-            logo: (
-                <div className="flex space-x-4 items-center">
-                    <img
-                        width={40}
-                        height={40}
-                        src="/images/logo-hipmi.png"
-                        alt="Logo Hipminet"
-                        className="object-cover"
-                    />
-                    <span className="text-2xl text-[#1566e5] font-bold">HIPMINET</span>
-                </div>
-            ),
         },
         {
+            title: "Marugame Udon App",
+            techStacks: ["Mobile App", "Payment Gateway"],
             desc: "Application that supports the needs of Marugame customers in ordering menus, and related matters about merchants. Developing an online order feature equipped with a payment gateway.",
             actions: [
                 {
@@ -93,17 +72,10 @@ export function RecentWorkSection() {
                     href: "https://apps.apple.com/id/app/marugame-udon/id1481435175",
                 },
             ],
-            logo: (
-                <img
-                    width={250}
-                    height={70}
-                    src="/images/logo-marugameudon.jpeg"
-                    alt="Logo Marugame Udon"
-                    className="object-cover"
-                />
-            ),
         },
         {
+            title: "Female In Action",
+            techStacks: ["Mobile App", "Tracker"],
             desc: "Professional psychology consultant application intended for users who have serious problems related to mental illness. FIA support other features, such as: related events, psychological tracker, and news.",
             actions: [
                 {
@@ -111,22 +83,10 @@ export function RecentWorkSection() {
                     href: "https://play.google.com/store/apps/details?id=com.femaleinaction.app&hl=en&gl=US",
                 },
             ],
-            logo: (
-                <div className="flex space-x-4 items-center">
-                    <img
-                        width={36}
-                        height={36}
-                        src="/images/logo-fia.webp"
-                        alt="Logo FIA"
-                        className="object-cover"
-                    />
-                    <span className="text-2xl text-[#d82685] font-bold">
-                        Female In Action
-                    </span>
-                </div>
-            ),
         },
         {
+            title: "Klik Diabetes",
+            techStacks: ["Mobile App", "Medical Report", "IoT"],
             desc: "Medical Report application, used to monitor diabetes symptoms, medication reminders, to health records. This application allows us to check diabetes information and its medical reports",
             actions: [
                 {
@@ -138,18 +98,11 @@ export function RecentWorkSection() {
                     href: "https://apps.apple.com/id/app/klik-diabetes/id1541593080?l=id",
                 },
             ],
-            logo: (
-                <img
-                    width={200}
-                    height={50}
-                    src="/images/logo-klikdiabetes.png"
-                    alt="Logo Klik Diabetes"
-                    className="object-cover"
-                />
-            ),
         },
         {
-            desc: "CRM application that is used by Prudential agents in managing customer development, conducting prospects and other matters related to Prudential products. ",
+            title: "Pruforce Mobile",
+            techStacks: ["Mobile App", "CRM"],
+            desc: "CRM application that is used by Prudential agents in managing customer development, conducting prospects and other matters related to Prudential products.",
             actions: [
                 {
                     title: "PlayStore",
@@ -160,20 +113,10 @@ export function RecentWorkSection() {
                     href: "https://apps.apple.com/id/app/pruforce-mobile/id1082618139",
                 },
             ],
-            logo: (
-                <div className="flex space-x-4 items-center">
-                    <img
-                        width={70}
-                        height={70}
-                        src="/images/logo-pru.png"
-                        alt="Logo Pruforce"
-                        className="object-cover"
-                    />
-                    <span className="text-2xl text-[#eb1d32] font-bold">Pruforce</span>
-                </div>
-            ),
         },
         {
+            title: "Kuman App",
+            techStacks: ["Mobile App", "UKM"],
             desc: "An app for managing the rest of the Kuman product system. Give the opportunity of micro-segment of UKM to develop their business.",
             actions: [
                 {
@@ -181,20 +124,10 @@ export function RecentWorkSection() {
                     href: "https://play.google.com/store/apps/details?id=com.kumanapp&hl=en&gl=US",
                 },
             ],
-            logo: (
-                <div className="flex space-x-1 items-center">
-                    <img
-                        width={50}
-                        height={50}
-                        src="/images/logo-kuman.png"
-                        alt="Logo Kuman"
-                        className="object-cover"
-                    />
-                    <span className="text-2xl text-[#67bb6a] font-bold">Kuman</span>
-                </div>
-            ),
         },
         {
+            title: "Procura GO",
+            techStacks: ["Mobile App", "E-Procurement"],
             desc: "E-procurement app tool that is used to facilitate access, such as: Purchasing Requisition, Tender Management, until Purchasing Order",
             actions: [
                 {
@@ -202,55 +135,61 @@ export function RecentWorkSection() {
                     href: "https://play.google.com/store/apps/details?id=com.procura.timah",
                 },
             ],
-            logo: (
-                <img
-                    width={140}
-                    height={40}
-                    src="/images/logo-procurago.png"
-                    alt="Logo Procura GO"
-                    className="object-cover"
-                />
-            ),
         },
     ];
+
     return (
         <section className="flex flex-col items-center">
-            <div className="bg-primary-50 dark:bg-darkSecondary w-full pt-36 pb-72">
-                <div className="max-w-screen-xl m-auto flex flex-col items-center">
-                    <h2 className="text-4xl font-bold">Recent Works</h2>
-                    <p className="max-w-screen-lg text-center mt-10 text-[#757575] dark:text-gray-400">
-                        All around software engineering, web development, and career
-                        development
-                    </p>
+            {/* Dark background style for the showcase section */}
+            <div className="bg-primary-50 dark:bg-[#080808] w-full pt-[10vh] pb-16 relative overflow-hidden">
+                {/* Background glow lines using a simple radial or div if needed */}
+                <div className="absolute top-0 inset-x-0 h-[300px] bg-gradient-to-b from-primary-500/10 to-transparent dark:from-primary-500/5 pointer-events-none"></div>
+                <div className="absolute -top-[200px] left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] opacity-20 dark:opacity-10 bg-primary-500 rounded-[100%] blur-[120px] pointer-events-none"></div>
+
+                <div className="max-w-screen-xl m-auto flex flex-col px-4 lg:px-0 relative z-0 w-full">
+                    <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+                        Projects <span className="text-primary-500">Showcase</span>
+                    </h2>
                 </div>
             </div>
-            <div className="max-w-screen-xl -mt-28 w-full px-4 lg:px-0">
-                <div className="grid lg:grid-cols-3 gap-10">
-                    {datas.map((item, idx) => (
-                        <div
-                            key={`recent-work-${idx}`}
-                            className="bg-white dark:bg-dark border-[1px] border-gray-100 dark:border-darkBorder shadow-sm rounded-xl px-9 py-14 flex flex-col items-center space-y-4"
-                        >
-                            {item.logo}
-                            <p className="text-sm text-center flex-grow">{item?.desc || ""}</p>
-                            <div className="flex gap-2">
-                                {item.actions.map((action, actionIdx) => (
-                                    <a
-                                        key={`recent-work-badge-${idx}${actionIdx}`}
-                                        href={action.href}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className={twMerge(
-                                            "font-mono flex bg-primary-50 dark:bg-[#123142] text-primary-700 dark:text-darkAccent rounded-md py-2 px-3 text-sm hover:underline"
-                                        )}
-                                    >
-                                        <SlShareAlt className="text-lg mr-2" />
-                                        {action.title}
-                                    </a>
-                                ))}
+
+            <div className="bg-primary-50 dark:bg-[#080808] w-full pb-72">
+                <div className="max-w-screen-xl w-full m-auto px-4 lg:px-0 relative z-0">
+                    <div className="grid lg:grid-cols-3 gap-6">
+                        {datas.map((item, idx) => (
+                            <div
+                                key={`recent-work-${idx}`}
+                                className="group bg-white dark:bg-[#111111] border-[1px] border-primary-500/50 dark:border-primary-500/30 dark:hover:border-primary-500/80 hover:shadow-[0_0_15px_var(--color-primary-500)] hover:shadow-primary-500/15 transition-all duration-300 rounded-xl p-8 flex flex-col relative z-0"
+                            >
+                                <a
+                                    href={item.actions[0]?.href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="flex items-center group/link cursor-pointer w-fit mb-4"
+                                >
+                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover/link:text-primary-500 transition-colors mr-2">
+                                        {item.title}
+                                    </h3>
+                                    <FiArrowUpRight className="text-primary-500 text-xl transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                                </a>
+
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {item.techStacks.map((stack, stackIdx) => (
+                                        <span
+                                            key={`stack-${idx}-${stackIdx}`}
+                                            className="text-xs font-mono text-gray-700 dark:text-gray-300 border-[1px] border-gray-300 dark:border-gray-700 rounded-full px-3 py-1 bg-gray-50 dark:bg-transparent"
+                                        >
+                                            {stack}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <p className="text-sm text-gray-600 dark:text-[#a1a1aa] leading-relaxed flex-grow font-sans">
+                                    {item.desc}
+                                </p>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
