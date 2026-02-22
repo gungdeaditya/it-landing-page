@@ -264,7 +264,7 @@ export function TechStackSection() {
             section_2_items: [
                 "HTML, CSS, Tailwind CSS, SCSS",
                 "npm, pnpm, bun",
-                "React/Next JS",
+                "React/Next JS, AstroJS",
                 "Progressive Web Apps (PWA)",
                 "React Router",
                 "Radix UI, Tailwind CSS, Shadcn UI, Material UI",
@@ -316,7 +316,7 @@ export function TechStackSection() {
     const yearExperiences = new Date().getFullYear() - 2018;
     return (
         <section className="flex flex-col items-center pt-10">
-            <div className="w-full pt-36 pb-72 relative">
+            <div className="w-full pt-16 pb-72 relative">
                 <div className="max-w-screen-xl m-auto flex flex-col items-center relative z-10">
                     <p className="text-lg">Lets talk...</p>
                     <h2 className="text-4xl font-bold text-center">

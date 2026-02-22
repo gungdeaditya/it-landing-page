@@ -83,7 +83,7 @@ export default function Hero() {
 
                 {/* Right Column Layout & Badges */}
                 <div className="relative h-[450px] lg:h-[600px] w-full hidden lg:flex items-center justify-center mt-12 lg:mt-0 max-w-lg lg:max-w-none mx-auto">
-                    <p className="absolute top-10 lg:top-24 right-0 lg:right-10 text-sm text-gray-500 dark:text-gray-400 text-right z-0 hidden lg:block mb-4">
+                    <p className="absolute top-10 lg:top-36 right-0 lg:right-10 text-sm text-gray-500 dark:text-gray-400 text-right z-0 hidden lg:block mb-4">
                         some technologies and practices I'm familiar with..
                     </p>
 
@@ -99,32 +99,35 @@ export default function Hero() {
                     </div>
 
                     {/* Floating Badges */}
-                    <div className="relative w-full h-[350px] sm:h-[450px] lg:h-[500px]">
-                        {technologies.map((tech, index) => (
-                            <motion.div
-                                key={index}
-                                className="absolute px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-primary-500/40 text-xs sm:text-sm font-medium backdrop-blur-md text-gray-700 dark:text-gray-200 bg-white/60 dark:bg-[#111827]/60 shadow-[0_0_10px_rgba(3,169,244,0.15)] dark:shadow-[0_0_15px_rgba(3,169,244,0.25)] hover:shadow-primary-500/50 hover:border-primary-500 transition-all cursor-default"
-                                style={{
-                                    left: tech.left,
-                                    top: tech.top,
-                                }}
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{
-                                    opacity: 1,
-                                    y: [0, -10, 0],
-                                }}
-                                transition={{
-                                    opacity: { duration: 0.8, delay: index * 0.05 },
-                                    y: {
-                                        duration: 3 + Math.random() * 2,
-                                        repeat: Infinity,
-                                        ease: "easeInOut",
-                                        delay: Math.random() * 2
-                                    }
-                                }}
-                            >
-                                {tech.name}
-                            </motion.div>
+                    <div className="relative w-full h-[350px] sm:h-[450px] lg:h-[500px] flex flex-col justify-center items-end gap-4 sm:gap-6 p-4 z-10">
+                        {Array.from({ length: 4 }).map((_, rowIndex) => (
+                            <div key={rowIndex} className="flex flex-wrap justify-end gap-4 sm:gap-6 w-full">
+                                {technologies.slice(rowIndex * 4, rowIndex * 4 + 4).map((tech, index) => {
+                                    const globalIndex = rowIndex * 4 + index;
+                                    return (
+                                        <motion.div
+                                            key={globalIndex}
+                                            className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-primary-500/40 text-xs sm:text-sm font-medium backdrop-blur-md text-gray-700 dark:text-gray-200 bg-white/60 dark:bg-[#111827]/60 shadow-[0_0_10px_rgba(3,169,244,0.15)] dark:shadow-[0_0_15px_rgba(3,169,244,0.25)] hover:shadow-primary-500/50 hover:border-primary-500 transition-all cursor-default"
+                                            initial={{ opacity: 0, y: 30 }}
+                                            animate={{
+                                                opacity: 1,
+                                                y: [0, -10, 0],
+                                            }}
+                                            transition={{
+                                                opacity: { duration: 0.8, delay: globalIndex * 0.05 },
+                                                y: {
+                                                    duration: 3 + Math.random() * 2,
+                                                    repeat: Infinity,
+                                                    ease: "easeInOut",
+                                                    delay: Math.random() * 2
+                                                }
+                                            }}
+                                        >
+                                            {tech.name}
+                                        </motion.div>
+                                    );
+                                })}
+                            </div>
                         ))}
                     </div>
                 </div>
