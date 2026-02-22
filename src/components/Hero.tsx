@@ -39,7 +39,7 @@ export default function Hero() {
                 }}
             />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 w-full mt-10 xl:-mt-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-0 w-full mt-10 xl:-mt-10">
                 {/* Left Column Text Content */}
                 <div className="flex flex-col flex-1 w-full max-w-xl mx-auto lg:mx-0">
                     <p className="text-gray-500 dark:text-gray-400 font-semibold tracking-widest text-sm mb-4 uppercase">
@@ -95,7 +95,7 @@ export default function Hero() {
 
                 {/* Right Column Layout & Badges */}
                 <div className="relative h-[450px] lg:h-[600px] w-full flex items-center justify-center mt-12 lg:mt-0 max-w-lg lg:max-w-none mx-auto">
-                    <p className="absolute top-10 lg:top-24 right-0 lg:right-10 text-sm text-gray-500 dark:text-gray-400 text-right z-10 hidden sm:block mb-4">
+                    <p className="absolute top-10 lg:top-24 right-0 lg:right-10 text-sm text-gray-500 dark:text-gray-400 text-right z-0 hidden sm:block mb-4">
                         some technologies and practices I'm familiar with..
                     </p>
 
