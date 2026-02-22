@@ -28,16 +28,7 @@ const technologies = [
 export default function Hero() {
     return (
         <section className="min-h-screen max-w-screen-xl flex flex-col justify-center m-auto px-4 2xl:px-0 relative pt-20 lg:pt-0">
-            {/* Background Base and Grid */}
-            <div
-                className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none -z-20"
-                style={{
-                    backgroundImage: "linear-gradient(to right, #888 1px, transparent 1px), linear-gradient(to bottom, #888 1px, transparent 1px)",
-                    backgroundSize: "45px 45px",
-                    maskImage: "radial-gradient(ellipse at center, white 20%, transparent 80%)",
-                    WebkitMaskImage: "radial-gradient(ellipse at center, white 20%, transparent 80%)"
-                }}
-            />
+            {/* Background applies globally from Layout */}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-0 w-full mt-10 xl:-mt-10">
                 {/* Left Column Text Content */}

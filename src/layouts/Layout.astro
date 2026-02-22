@@ -49,9 +49,14 @@ const { title, description = "This is our profile data" } = Astro.props;
 	</head>
 	<body class="font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground min-h-screen flex flex-col">
 		<Navbar client:load />
-		<main class="flex-grow">
+		<main class="flex-grow relative z-0">
+			<!-- Background Base and Grid from Hero applied globally -->
+			<div
+				class="fixed inset-0 opacity-5 dark:opacity-10 pointer-events-none -z-20"
+				style="background-image: linear-gradient(to right, #888 1px, transparent 1px), linear-gradient(to bottom, #888 1px, transparent 1px); background-size: 45px 45px; mask-image: radial-gradient(ellipse at center, white 50%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse at center, white 50%, transparent 100%);"
+			></div>
 			<slot />
 		</main>
-		<Footer client:idle />
+		<Footer client:idle pathname={Astro.url.pathname} />
 	</body>
 </html>

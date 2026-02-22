@@ -141,7 +141,7 @@ export default function AboutMe() {
                     <li key={`about-${idx}`} className="mb-4 ml-6">
                         <span
                             className={twMerge(
-                                "absolute flex items-center justify-center w-8 h-8 bg-primary-200 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-primary-900",
+                                "absolute flex items-center justify-center w-8 h-8 bg-primary-200 rounded-full -left-4 ring-4 ring-background dark:ring-background dark:bg-primary-900",
                                 idx !== 0 && "bg-gray-100 dark:bg-[#374251]"
                             )}
                         >
@@ -179,7 +179,7 @@ export default function AboutMe() {
                                         <span
                                             key={`about-badge-${idx}`}
                                             className={twMerge(
-                                                "font-mono px-4 py-1 rounded-full text-[#757575] dark:text-darkAccent text-xs bg-primary-50 dark:bg-[#123142]"
+                                                "px-3 py-1 rounded-full border border-primary-500/40 text-xs font-medium backdrop-blur-md text-gray-700 dark:text-gray-200 bg-white/60 dark:bg-[#111827]/60 shadow-[0_0_10px_rgba(3,169,244,0.15)]"
                                             )}
                                         >
                                             {val}

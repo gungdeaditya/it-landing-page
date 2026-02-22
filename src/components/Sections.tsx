@@ -140,8 +140,8 @@ export function RecentWorkSection() {
 
     return (
         <section className="flex flex-col items-center">
-            {/* Dark background style for the showcase section */}
-            <div className="bg-primary-50 dark:bg-[#080808] w-full pt-[10vh] pb-16 relative overflow-hidden">
+            {/* Transparent background style for the showcase section */}
+            <div className="w-full pt-[10vh] pb-16 relative overflow-hidden">
                 {/* Background glow lines using a simple radial or div if needed */}
                 <div className="absolute top-0 inset-x-0 h-[300px] bg-gradient-to-b from-primary-500/10 to-transparent dark:from-primary-500/5 pointer-events-none"></div>
                 <div className="absolute -top-[200px] left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] opacity-20 dark:opacity-10 bg-primary-500 rounded-[100%] blur-[120px] pointer-events-none"></div>
@@ -153,13 +153,13 @@ export function RecentWorkSection() {
                 </div>
             </div>
 
-            <div className="bg-primary-50 dark:bg-[#080808] w-full pb-72">
-                <div className="max-w-screen-xl w-full m-auto px-4 lg:px-0 relative z-0">
+            <div className="w-full pb-24 relative z-0">
+                <div className="max-w-screen-xl w-full m-auto px-4 lg:px-0 relative z-10">
                     <div className="grid lg:grid-cols-3 gap-6">
                         {datas.map((item, idx) => (
                             <div
                                 key={`recent-work-${idx}`}
-                                className="group bg-white dark:bg-[#111111] border-[1px] border-primary-500/50 dark:border-primary-500/30 dark:hover:border-primary-500/80 hover:shadow-[0_0_15px_var(--color-primary-500)] hover:shadow-primary-500/15 transition-all duration-300 rounded-xl p-8 flex flex-col relative z-0"
+                                className="group bg-white/60 dark:bg-[#111827]/60 backdrop-blur-md border-[1px] border-primary-500/30 dark:border-primary-500/20 dark:hover:border-primary-500/80 hover:shadow-[0_0_15px_rgba(3,169,244,0.25)] transition-all duration-300 rounded-xl p-8 flex flex-col relative z-0"
                             >
                                 <a
                                     href={item.actions[0]?.href}
@@ -309,8 +309,8 @@ export function TechStackSection() {
     const yearExperiences = new Date().getFullYear() - 2018;
     return (
         <section className="flex flex-col items-center pt-10">
-            <div className="bg-primary-50 dark:bg-darkSecondary w-full pt-36 pb-72">
-                <div className="max-w-screen-xl m-auto flex flex-col items-center">
+            <div className="w-full pt-36 pb-72 relative">
+                <div className="max-w-screen-xl m-auto flex flex-col items-center relative z-10">
                     <p className="text-lg">Lets talk...</p>
                     <h2 className="text-4xl font-bold text-center">
                         About My{" "}
@@ -327,8 +327,8 @@ export function TechStackSection() {
                     </p>
                 </div>
             </div>
-            <div className="max-w-screen-xl -mt-28 px-4 lg:px-0 w-full">
-                <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-gray-100 dark:divide-darkBorder w-full bg-white dark:bg-dark shadow-md rounded-2xl border-[1px] border-gray-100 dark:border-darkBorder">
+            <div className="max-w-screen-xl -mt-28 px-4 lg:px-0 w-full relative z-20">
+                <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-primary-500/10 dark:divide-primary-500/10 w-full bg-white/60 dark:bg-[#111827]/60 backdrop-blur-md shadow-[0_0_15px_rgba(3,169,244,0.1)] rounded-2xl border-[1px] border-primary-500/20">
                     {datas.map((item, index) => (
                         <div
                             key={`tech-stack-${index}`}
