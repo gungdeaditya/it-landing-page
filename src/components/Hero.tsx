@@ -87,17 +87,6 @@ export default function Hero() {
                         some technologies and practices I'm familiar with..
                     </p>
 
-                    {/* Background Decorative SVG Lines matching Primary Color */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] -z-10 opacity-20 pointer-events-none">
-                        <svg viewBox="0 0 500 500" className="w-full h-full text-primary-500" preserveAspectRatio="none">
-                            <path d="M 0 500 C 150 400, 300 250, 500 100" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                            <path d="M 50 500 C 200 450, 350 300, 500 150" fill="none" stroke="currentColor" strokeWidth="1" />
-                            <path d="M 100 500 C 250 500, 400 350, 500 200" fill="none" stroke="currentColor" strokeWidth="0.8" />
-                            <path d="M 150 500 C 300 550, 450 400, 500 250" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                            <path d="M -50 400 C 100 300, 250 150, 450 0" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                        </svg>
-                    </div>
-
                     {/* Floating Badges */}
                     <div className="relative w-full h-[350px] sm:h-[450px] lg:h-[500px] flex flex-col justify-center items-end gap-4 sm:gap-6 p-4 z-10">
                         {Array.from({ length: 4 }).map((_, rowIndex) => (
