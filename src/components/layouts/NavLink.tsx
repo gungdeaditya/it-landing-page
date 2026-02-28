@@ -6,6 +6,7 @@ type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
     className?: string;
     children: ReactNode;
     isActive?: boolean;
+    hideIndicator?: boolean;
 };
 
 export default function NavLink({
@@ -13,12 +14,13 @@ export default function NavLink({
     href,
     children,
     isActive,
+    hideIndicator,
     ...otherProps
 }: Props) {
     return (
         <a
             className={twMerge(
-                "relative text-gray-500 transition hover:text-gray-500/75",
+                "relative text-gray-500 transition hover:text-gray-500/75 cursor-pointer",
                 isActive ? "text-primary-500" : "",
                 className
             )}
@@ -26,7 +28,7 @@ export default function NavLink({
             {...otherProps}
         >
             {children}
-            {isActive && (
+            {isActive && !hideIndicator && (
                 <motion.div
                     layoutId="active-nav-indicator"
                     className="absolute -bottom-3 left-0 right-0 h-0.5 bg-primary-500 rounded-full"

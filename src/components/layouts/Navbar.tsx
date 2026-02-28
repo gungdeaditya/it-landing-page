@@ -34,6 +34,18 @@ export default function Navbar() {
 
     const closeMenus = () => setOpenMenus(false);
 
+    const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+        e.preventDefault();
+        setOpenMenus(false);
+        // Wait for the exit animation of Framer Motion to complete before scrolling
+        setTimeout(() => {
+            const element = document.getElementById(targetId);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }, 200);
+    };
+
     return (
         <header
             aria-label="Site Header"
@@ -41,7 +53,7 @@ export default function Navbar() {
         >
             <div className="mx-auto max-w-screen-xl flex items-center justify-between">
                 <div className="flex space-x-2">
-                    <a href="/" className="cursor-pointer" onClick={closeMenus}>
+                    <a href="/" className="cursor-pointer" onClick={() => setOpenMenus(false)}>
                         <h1 className="font-bold text-3xl text-black tracking-tight">
                             <span className="dark:text-white">GUNG </span>
                             <span className="bg-gradient-to-r bg-clip-text from-darkAccent to-primary-700 text-transparent">
@@ -99,27 +111,27 @@ export default function Navbar() {
                     >
                         <ul className="flex flex-col gap-6 text-sm font-semibold w-full pt-6 px-2">
                             <li>
-                                <NavLink href="#home" onClick={closeMenus} isActive={activeSection === "home" || activeSection === ""}>
+                                <NavLink href="#home" onClick={(e) => handleMobileNavClick(e as any, "home")} isActive={activeSection === "home" || activeSection === ""} hideIndicator>
                                     Home
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="#projects" onClick={closeMenus} isActive={activeSection === "projects"}>
+                                <NavLink href="#projects" onClick={(e) => handleMobileNavClick(e as any, "projects")} isActive={activeSection === "projects"} hideIndicator>
                                     Projects
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="#experiences" onClick={closeMenus} isActive={activeSection === "experiences"}>
+                                <NavLink href="#experiences" onClick={(e) => handleMobileNavClick(e as any, "experiences")} isActive={activeSection === "experiences"} hideIndicator>
                                     Experiences
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="#tech-stack" onClick={closeMenus} isActive={activeSection === "tech-stack"}>
+                                <NavLink href="#tech-stack" onClick={(e) => handleMobileNavClick(e as any, "tech-stack")} isActive={activeSection === "tech-stack"} hideIndicator>
                                     Tech Stack
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="#contact" onClick={closeMenus} isActive={activeSection === "contact"}>
+                                <NavLink href="#contact" onClick={(e) => handleMobileNavClick(e as any, "contact")} isActive={activeSection === "contact"} hideIndicator>
                                     Contact Me
                                 </NavLink>
                             </li>
