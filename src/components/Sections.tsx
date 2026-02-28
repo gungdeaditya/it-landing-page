@@ -139,7 +139,7 @@ export function RecentWorkSection() {
     ];
 
     return (
-        <section className="flex flex-col items-center">
+        <section id="projects" className="flex flex-col items-center scroll-mt-24">
             {/* Transparent background style for the showcase section */}
             <div className="w-full pt-[10vh] pb-16 relative overflow-hidden">
                 {/* Background glow lines using a simple radial or div if needed */}
@@ -315,17 +315,17 @@ export function TechStackSection() {
     ];
     const yearExperiences = new Date().getFullYear() - 2018;
     return (
-        <section className="flex flex-col items-center pt-10">
-            <div className="w-full pt-16 pb-72 relative">
-                <div className="max-w-screen-xl m-auto flex flex-col items-center relative z-10">
-                    <p className="text-lg">Lets talk...</p>
-                    <h2 className="text-4xl font-bold text-center">
-                        About My{" "}
-                        <span className="bg-gradient-to-r bg-clip-text from-darkAccent to-primary-700 text-transparent">
-                            Tech Stack
-                        </span>
+        <section className="flex flex-col items-center">
+            <div className="w-full pt-[10vh] pb-16 relative overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-[300px] bg-gradient-to-b from-primary-500/10 to-transparent dark:from-primary-500/5 pointer-events-none"></div>
+                <div className="absolute -top-[200px] left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] opacity-20 dark:opacity-10 bg-primary-500 rounded-[100%] blur-[120px] pointer-events-none"></div>
+
+                <div className="max-w-screen-xl m-auto flex flex-col items-center text-center px-4 lg:px-0 relative z-0 w-full">
+                    <p className="text-lg mb-2">Lets talk...</p>
+                    <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+                        About <span className="bg-gradient-to-r bg-clip-text from-darkAccent to-primary-700 text-transparent">TechStack</span>
                     </h2>
-                    <p className="max-w-screen-lg text-center mt-10 text-[#757575] dark:text-gray-400 leading-relaxed">
+                    <p className="max-w-screen-lg mt-10 text-[#757575] dark:text-gray-400 leading-relaxed">
                         {`I have been involved in professional coding development over ${yearExperiences} years ago,
               and I've done remote work for agencies, mentor, and
               collaborated with talented people to create digital products for both
@@ -334,92 +334,50 @@ export function TechStackSection() {
                     </p>
                 </div>
             </div>
-            <div className="max-w-screen-xl -mt-28 px-4 lg:px-0 w-full relative z-20">
-                <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-primary-500/10 dark:divide-primary-500/10 w-full bg-white/60 dark:bg-[#111827]/60 backdrop-blur-md shadow-[0_0_15px_rgba(3,169,244,0.1)] rounded-2xl border-[1px] border-primary-500/20">
-                    {datas.map((item, index) => (
-                        <div
-                            key={`tech-stack-${index}`}
-                            className="col-span-1 flex flex-col items-center px-10 py-10 lg:py-20 space-y-6"
-                        >
-                            <div className="w-[72px] h-[72px] rounded-full bg-customAccent dark:bg-darkAccent flex items-center justify-center">
-                                {item.icon}
-                            </div>
-                            <h3 className="text-xl font-semibold text-center">
-                                {item.title}
-                            </h3>
-                            <p className="text-center text-[#757575] dark:text-gray-400">
-                                {item.desc}
-                            </p>
-                            <div className="space-y-1 text-center">
-                                <h4 className="text-primary-500">{item.section_1_title}</h4>
-                                <p className="text-[#757575] dark:text-gray-400">
-                                    {item.section_1_desc}
+
+            <div className="w-full pb-24 relative z-0">
+                <div className="max-w-screen-xl w-full m-auto px-4 lg:px-0 relative z-10">
+                    <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-primary-500/10 dark:divide-primary-500/10 w-full bg-white/60 dark:bg-[#111827]/60 backdrop-blur-md shadow-[0_0_15px_rgba(3,169,244,0.1)] rounded-2xl border-[1px] border-primary-500/20">
+                        {datas.map((item, index) => (
+                            <div
+                                key={`tech-stack-${index}`}
+                                className="col-span-1 flex flex-col items-center px-10 py-10 lg:py-20 space-y-6"
+                            >
+                                <div className="w-[72px] h-[72px] rounded-full bg-customAccent dark:bg-darkAccent flex items-center justify-center">
+                                    {item.icon}
+                                </div>
+                                <h3 className="text-xl font-semibold text-center">
+                                    {item.title}
+                                </h3>
+                                <p className="text-center text-[#757575] dark:text-gray-400">
+                                    {item.desc}
                                 </p>
+                                <div className="space-y-1 text-center">
+                                    <h4 className="text-primary-500">{item.section_1_title}</h4>
+                                    <p className="text-[#757575] dark:text-gray-400">
+                                        {item.section_1_desc}
+                                    </p>
+                                </div>
+                                <div className="space-y-1 text-center">
+                                    <h4 className="text-primary-500">{item.section_2_title}</h4>
+                                    <ul className="space-y-1">
+                                        {item.section_2_items.map((stackItem, stackIndex) => (
+                                            <li
+                                                key={`-${index}-${stackIndex}`}
+                                                className="text-[#757575] dark:text-gray-400"
+                                            >
+                                                {stackItem}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
-                            <div className="space-y-1 text-center">
-                                <h4 className="text-primary-500">{item.section_2_title}</h4>
-                                <ul className="space-y-1">
-                                    {item.section_2_items.map((stackItem, stackIndex) => (
-                                        <li
-                                            key={`-${index}-${stackIndex}`}
-                                            className="text-[#757575] dark:text-gray-400"
-                                        >
-                                            {stackItem}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
     );
 }
 
-export function WorkExperienceSection() {
-    return (
-        <section className="max-w-screen-xl m-auto flex flex-col justify-center items-center py-[20vh] space-y-20 px-4 lg:px-0">
-            <h2 className="text-2xl font-bold text-center">
-                {`I'm proud to have experience working with some awesome companies:`}
-            </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 w-full gap-20 items-center">
-                <div className="flex justify-center">
-                    <img
-                        width={200}
-                        height={100}
-                        src="/images/logo-bri.png"
-                        alt="Logo BRI"
-                    />
-                </div>
-                <div className="flex justify-center">
-                    <img
-                        width={200}
-                        height={100}
-                        src="/images/logo-barito.png"
-                        alt="Logo Barito"
-                        className="object-cover"
-                    />
-                </div>
-                <div className="flex justify-center">
-                    <img
-                        width={200}
-                        height={100}
-                        src="/images/logo-kampus-merdeka.png"
-                        alt="Logo Kampus Merdeka"
-                        className="object-cover"
-                    />
-                </div>
-                <div className="flex justify-center">
-                    <img
-                        width={200}
-                        height={100}
-                        src="/images/logo-procura.png"
-                        alt="Logo Procura"
-                        className="object-cover"
-                    />
-                </div>
-            </div>
-        </section>
-    );
-}
+

@@ -1,20 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero";
-import { TechStackSection, WorkExperienceSection, RecentWorkSection } from "../components/Sections";
+import AboutMe from "../components/AboutMe";
+import { TechStackSection, RecentWorkSection } from "../components/Sections";
 ---
 
 <Layout 
   title="Gungde Aditya | Front-End Developer"
-  description="Front-end developer with 3+ years of experience delivering scalable, performant, and conversion-focused web applications for modern digital products."
+  description="Front-end developer with 3+ experience delivering scalable, performant, and conversion-focused web applications for modern digital products."
   image="/images/og-image.png"
 >
-  <div class="min-h-screen relative w-full overflow-hidden">
+  <div class="min-h-screen relative w-full overflow-hidden" id="home">
 
 
     <Hero client:load />
-    <TechStackSection client:visible />
-    <WorkExperienceSection client:visible />
     <RecentWorkSection client:visible />
+    <AboutMe client:load />
+    <TechStackSection client:visible />
   </div>
 </Layout>

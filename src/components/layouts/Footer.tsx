@@ -30,10 +30,8 @@ const socials = [
 ];
 
 const Footer = ({ pathname = "" }: { pathname?: string }) => {
-    const isContactPage = pathname.includes('/contact');
-
     return (
-        <footer className="relative mt-auto w-full px-10 lg:px-2 flex flex-col justify-center items-center py-24 z-10 overflow-hidden font-inter">
+        <footer id="contact" className="relative mt-auto w-full px-10 lg:px-2 flex flex-col justify-center items-center py-24 z-10 overflow-hidden font-inter scroll-mt-24">
             {/* Background glowing lines effect using SVG */}
             <div className="absolute inset-0 pointer-events-none opacity-20 dark:opacity-30 z-0 flex justify-center items-end overflow-hidden">
                 <svg className="w-full h-full min-w-[1200px] object-cover" viewBox="0 0 1200 600" preserveAspectRatio="none">
@@ -60,41 +58,37 @@ const Footer = ({ pathname = "" }: { pathname?: string }) => {
             </div>
 
             <div className="z-10 flex flex-col items-center w-full relative">
-                {!isContactPage && (
-                    <>
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-center mb-16 font-montserrat">
-                            Interested in working together?
-                        </h2>
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-center mb-16 font-montserrat">
+                    Interested in working together?
+                </h2>
 
-                        <div className="relative flex items-center justify-center mb-16 group">
-                            {/* Rotating text wrapper */}
-                            <div className="absolute w-[160px] h-[160px] animate-[spin_10s_linear_infinite] group-hover:[animation-play-state:paused] pointer-events-none">
-                                <svg viewBox="0 0 100 100" className="w-full h-full text-foreground/80 overflow-visible" fill="currentColor">
-                                    <defs>
-                                        <path
-                                            id="circlePath"
-                                            d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
-                                        />
-                                    </defs>
-                                    <text className="text-[12px] font-bold uppercase font-montserrat tracking-[0.25em]">
-                                        <textPath href="#circlePath" startOffset="0%">
-                                            SEND ME AN EMAIL / SEND ME AN EMAIL /
-                                        </textPath>
-                                    </text>
-                                </svg>
-                            </div>
+                <div className="relative flex items-center justify-center mb-16 group">
+                    {/* Rotating text wrapper */}
+                    <div className="absolute w-[160px] h-[160px] animate-[spin_10s_linear_infinite] group-hover:[animation-play-state:paused] pointer-events-none">
+                        <svg viewBox="0 0 100 100" className="w-full h-full text-foreground/80 overflow-visible" fill="currentColor">
+                            <defs>
+                                <path
+                                    id="circlePath"
+                                    d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+                                />
+                            </defs>
+                            <text className="text-[12px] font-bold uppercase font-montserrat tracking-[0.25em]">
+                                <textPath href="#circlePath" startOffset="0%">
+                                    SEND ME AN EMAIL / SEND ME AN EMAIL /
+                                </textPath>
+                            </text>
+                        </svg>
+                    </div>
 
-                            {/* Center Button */}
-                            <a
-                                href="/contact"
-                                aria-label="Send me an email"
-                                className="w-[60px] h-[60px] rounded-full bg-primary-500 text-white flex items-center justify-center relative z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_30px_rgba(3,169,244,0.3)] hover:shadow-[0_0_40px_rgba(3,169,244,0.5)]"
-                            >
-                                <IoMdMail className="w-8 h-8" />
-                            </a>
-                        </div>
-                    </>
-                )}
+                    {/* Center Button */}
+                    <a
+                        href="mailto:gunkdep@gmail.com"
+                        aria-label="Send me an email"
+                        className="w-[60px] h-[60px] rounded-full bg-primary-500 text-white flex items-center justify-center relative z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_30px_rgba(3,169,244,0.3)] hover:shadow-[0_0_40px_rgba(3,169,244,0.5)]"
+                    >
+                        <IoMdMail className="w-8 h-8" />
+                    </a>
+                </div>
 
                 {/* Social links */}
                 <div className="flex space-x-6 items-center">

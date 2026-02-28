@@ -31,15 +31,19 @@ export default function Navbar() {
                     <nav aria-label="Site Nav" className="hidden lg:block">
                         <ul className="flex items-center gap-6 text-sm font-semibold">
                             <li>
-                                <NavLink href="/">Home</NavLink>
+                                <NavLink href="#home">Home</NavLink>
                             </li>
-
                             <li>
-                                <NavLink href="/about">About</NavLink>
+                                <NavLink href="#about">About</NavLink>
                             </li>
-
                             <li>
-                                <NavLink href="/contact">Contact</NavLink>
+                                <NavLink href="#projects">Projects</NavLink>
+                            </li>
+                            <li>
+                                <NavLink href="#experiences">Experiences</NavLink>
+                            </li>
+                            <li>
+                                <NavLink href="#contact">Contact</NavLink>
                             </li>
                         </ul>
                     </nav>
@@ -71,17 +75,27 @@ export default function Navbar() {
                     >
                         <ul className="flex flex-col gap-6 text-sm font-semibold w-full pt-6 px-2">
                             <li>
-                                <NavLink href="/" onClick={closeMenus}>
+                                <NavLink href="#home" onClick={closeMenus}>
                                     Home
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="/about" onClick={closeMenus}>
+                                <NavLink href="#about" onClick={closeMenus}>
                                     About
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="/contact" onClick={closeMenus}>
+                                <NavLink href="#projects" onClick={closeMenus}>
+                                    Projects
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink href="#experiences" onClick={closeMenus}>
+                                    Experiences
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink href="#contact" onClick={closeMenus}>
                                     Contact
                                 </NavLink>
                             </li>
