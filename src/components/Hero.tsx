@@ -24,7 +24,7 @@ const technologies = [
 
 export default function Hero() {
     return (
-        <section className="min-h-screen max-w-screen-xl flex flex-col justify-center m-auto px-4 2xl:px-0 relative pt-20 lg:pt-0">
+        <section className="min-h-screen max-w-7xl flex flex-col justify-center m-auto px-4 2xl:px-0 relative pt-20 lg:pt-0">
             {/* Background applies globally from Layout */}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-0 w-full mt-10 xl:-mt-10">
@@ -89,6 +89,9 @@ export default function Hero() {
 
                     {/* Floating Badges */}
                     <div className="relative w-full h-[350px] sm:h-[450px] lg:h-[500px] flex flex-col justify-center items-end gap-4 sm:gap-6 p-4 z-10">
+                        {/* Blurry Gradient Glow behind bubbles */}
+                        <div className="absolute top-1/2 left-7/12 -translate-x-1/2 -translate-y-1/2 w-[250px] sm:w-[350px] lg:w-[800px] h-[250px] sm:h-[350px] lg:h-[450px] bg-primary-500/30 dark:bg-primary-500/20 rounded-full blur-[80px] sm:blur-[120px] -z-10 pointer-events-none mix-blend-screen dark:mix-blend-lighten animate-pulse duration-4000"></div>
+
                         {Array.from({ length: 4 }).map((_, rowIndex) => (
                             <div key={rowIndex} className="flex flex-wrap justify-end gap-4 sm:gap-6 w-full">
                                 {technologies.slice(rowIndex * 4, rowIndex * 4 + 4).map((tech, index) => {

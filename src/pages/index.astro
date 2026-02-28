@@ -10,76 +10,7 @@ import { TechStackSection, WorkExperienceSection, RecentWorkSection } from "../c
   image="/images/og-image.png"
 >
   <div class="min-h-screen relative w-full overflow-hidden">
-    <!-- Sweeping fine lines background (elegant fanned bundles, blue tone, subtle opacity) -->
-    <div class="absolute inset-0 z-[-1] pointer-events-none flex justify-center">
-      <svg class="w-full max-w-[1920px] h-full absolute top-0" viewBox="0 0 1440 3000" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="bundleGrad1" x1="0" y1="0" x2="1440" y2="1500" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#03a9f4" stop-opacity="0.0" />
-            <stop offset="0.3" stop-color="#03a9f4" stop-opacity="0.5" />
-            <stop offset="0.7" stop-color="#0288d1" stop-opacity="0.5" />
-            <stop offset="1" stop-color="#0288d1" stop-opacity="0.0" />
-          </linearGradient>
-          <linearGradient id="bundleGrad2" x1="1440" y1="1000" x2="0" y2="3000" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#0288d1" stop-opacity="0.0" />
-            <stop offset="0.3" stop-color="#03a9f4" stop-opacity="0.4" />
-            <stop offset="0.7" stop-color="#4dc2b5" stop-opacity="0.4" />
-            <stop offset="1" stop-color="#4dc2b5" stop-opacity="0.0" />
-          </linearGradient>
-          <linearGradient id="bundleGrad3" x1="0" y1="2000" x2="1440" y2="3000" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#4dc2b5" stop-opacity="0.0" />
-            <stop offset="0.3" stop-color="#03a9f4" stop-opacity="0.4" />
-            <stop offset="0.7" stop-color="#0288d1" stop-opacity="0.3" />
-            <stop offset="1" stop-color="#0288d1" stop-opacity="0.0" />
-          </linearGradient>
-        </defs>
-        
-        {/* Bundle 1: Top section sweep (Sparse) */}
-        <g stroke="url(#bundleGrad1)" stroke-width="1.2" fill="none" class="opacity-30 dark:opacity-40">
-          {Array.from({ length: 8 }).map((_, i) => {
-            const spread = i - 4; 
-            return (
-              <path 
-                d={`M ${-200} ${900 + spread * 60} 
-                    C ${400} ${1000 + spread * 8}, 
-                      ${800} ${400 + spread * 4}, 
-                      ${1600} ${100 + spread * 50}`}
-              />
-            );
-          })}
-        </g>
-        
-        {/* Bundle 2: Middle crossing sweep (Sparse) */}
-        <g stroke="url(#bundleGrad2)" stroke-width="1" fill="none" class="opacity-30 dark:opacity-40">
-          {Array.from({ length: 10 }).map((_, i) => {
-            const spread = i - 5; 
-            return (
-              <path 
-                d={`M ${1600} ${1300 + spread * 50} 
-                    C ${1000} ${1400 + spread * 8}, 
-                      ${600} ${2000 + spread * 10}, 
-                      ${-200} ${2400 + spread * 60}`}
-              />
-            );
-          })}
-        </g>
 
-        {/* Bundle 3: Bottom sweeping accent (Sparse) */}
-        <g stroke="url(#bundleGrad3)" stroke-width="1" fill="none" class="opacity-20 dark:opacity-30">
-          {Array.from({ length: 6 }).map((_, i) => {
-            const spread = i - 3; 
-            return (
-              <path 
-                d={`M ${-200} ${2600 + spread * 40} 
-                    C ${500} ${2400 + spread * 6}, 
-                      ${900} ${2800 + spread * 8}, 
-                      ${1600} ${3100 + spread * 40}`}
-              />
-            );
-          })}
-        </g>
-      </svg>
-    </div>
 
     <Hero client:load />
     <TechStackSection client:visible />
