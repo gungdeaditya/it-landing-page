@@ -47,20 +47,12 @@ export default function Hero() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
                         <a
-                            href="/contact"
+                            href="#contact"
                             className="inline-flex items-center justify-center bg-primary-500 text-white hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 transition-colors px-8 py-3.5 rounded-full font-medium text-lg leading-tight group"
                         >
                             Contact me <FiArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </a>
                         <div className="flex space-x-3">
-                            <a
-                                href="https://www.youtube.com"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="w-[50px] h-[50px] rounded-full border border-gray-300 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors"
-                            >
-                                <FaYoutube className="w-[22px] h-[22px]" />
-                            </a>
                             <a
                                 href="https://www.github.com/gungdeaditya"
                                 target="_blank"

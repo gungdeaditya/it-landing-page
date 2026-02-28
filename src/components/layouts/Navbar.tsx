@@ -34,16 +34,16 @@ export default function Navbar() {
                                 <NavLink href="#home">Home</NavLink>
                             </li>
                             <li>
-                                <NavLink href="#about">About</NavLink>
-                            </li>
-                            <li>
                                 <NavLink href="#projects">Projects</NavLink>
                             </li>
                             <li>
                                 <NavLink href="#experiences">Experiences</NavLink>
                             </li>
                             <li>
-                                <NavLink href="#contact">Contact</NavLink>
+                                <NavLink href="#tech-stack">Tech Stack</NavLink>
+                            </li>
+                            <li>
+                                <NavLink href="#contact">Contact Me</NavLink>
                             </li>
                         </ul>
                     </nav>
@@ -80,11 +80,6 @@ export default function Navbar() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="#about" onClick={closeMenus}>
-                                    About
-                                </NavLink>
-                            </li>
-                            <li>
                                 <NavLink href="#projects" onClick={closeMenus}>
                                     Projects
                                 </NavLink>
@@ -95,8 +90,13 @@ export default function Navbar() {
                                 </NavLink>
                             </li>
                             <li>
+                                <NavLink href="#tech-stack" onClick={closeMenus}>
+                                    Tech Stack
+                                </NavLink>
+                            </li>
+                            <li>
                                 <NavLink href="#contact" onClick={closeMenus}>
-                                    Contact
+                                    Contact Me
                                 </NavLink>
                             </li>
                         </ul>

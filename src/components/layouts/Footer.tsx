@@ -18,11 +18,6 @@ const socials = [
         label: "GitHub",
     },
     {
-        url: "https://dribbble.com/gungdeaditya",
-        icon: <TbWorld className="w-5 h-5" />,
-        label: "Website",
-    },
-    {
         url: "mailto:gunkdep@gmail.com",
         icon: <IoMdMail className="w-5 h-5" />,
         label: "Email",

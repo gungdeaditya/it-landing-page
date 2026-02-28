@@ -139,16 +139,16 @@ export function RecentWorkSection() {
     ];
 
     return (
-        <section id="projects" className="flex flex-col items-center scroll-mt-24">
-            {/* Transparent background style for the showcase section */}
-            <div className="w-full pt-[10vh] pb-16 relative overflow-hidden">
-                {/* Background glow lines using a simple radial or div if needed */}
-                <div className="absolute top-0 inset-x-0 h-[300px] bg-gradient-to-b from-primary-500/10 to-transparent dark:from-primary-500/5 pointer-events-none"></div>
-                <div className="absolute -top-[200px] left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] opacity-20 dark:opacity-10 bg-primary-500 rounded-[100%] blur-[120px] pointer-events-none"></div>
+        <section id="projects" className="relative flex flex-col items-center scroll-mt-24 w-full">
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-[100px] -left-[100px] w-[400px] h-[400px] bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-[120px]"></div>
+                <div className="absolute top-[30%] -right-[150px] w-[500px] h-[500px] bg-emerald-500/20 dark:bg-emerald-500/10 rounded-full blur-[120px]"></div>
+            </div>
 
+            <div className="w-full pt-[10vh] pb-16 relative z-10">
                 <div className="max-w-screen-xl m-auto flex flex-col px-4 lg:px-0 relative z-0 w-full">
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-                        Projects <span className="text-primary-500">Showcase</span>
+                        Projects <span className="bg-gradient-to-r bg-clip-text from-darkAccent to-primary-700 text-transparent">Showcase</span>
                     </h2>
                 </div>
             </div>
@@ -315,11 +315,13 @@ export function TechStackSection() {
     ];
     const yearExperiences = new Date().getFullYear() - 2018;
     return (
-        <section className="flex flex-col items-center">
-            <div className="w-full pt-[10vh] pb-16 relative overflow-hidden">
-                <div className="absolute top-0 inset-x-0 h-[300px] bg-gradient-to-b from-primary-500/10 to-transparent dark:from-primary-500/5 pointer-events-none"></div>
-                <div className="absolute -top-[200px] left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] opacity-20 dark:opacity-10 bg-primary-500 rounded-[100%] blur-[120px] pointer-events-none"></div>
+        <section id="tech-stack" className="relative flex flex-col items-center w-full scroll-mt-24">
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-[100px] -left-[100px] w-[400px] h-[400px] bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-[120px]"></div>
+                <div className="absolute top-[30%] -right-[150px] w-[500px] h-[500px] bg-emerald-500/20 dark:bg-emerald-500/10 rounded-full blur-[120px]"></div>
+            </div>
 
+            <div className="w-full pt-[10vh] pb-16 relative z-10">
                 <div className="max-w-screen-xl m-auto flex flex-col items-center text-center px-4 lg:px-0 relative z-0 w-full">
                     <p className="text-lg mb-2">Lets talk...</p>
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-white">

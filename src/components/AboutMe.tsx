@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function AboutMe() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -138,11 +139,13 @@ export default function AboutMe() {
     const visibleData = isExpanded ? datas : datas.slice(0, 3);
 
     return (
-        <section id="experiences" className="flex flex-col items-center scroll-mt-24">
-            <div className="w-full pt-[10vh] pb-16 relative overflow-hidden">
-                <div className="absolute top-0 inset-x-0 h-[300px] bg-gradient-to-b from-primary-500/10 to-transparent dark:from-primary-500/5 pointer-events-none"></div>
-                <div className="absolute -top-[200px] left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] opacity-20 dark:opacity-10 bg-primary-500 rounded-[100%] blur-[120px] pointer-events-none"></div>
+        <section id="experiences" className="relative flex flex-col items-center scroll-mt-24 w-full">
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-[100px] -left-[100px] w-[400px] h-[400px] bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-[120px]"></div>
+                <div className="absolute top-[30%] -right-[150px] w-[500px] h-[500px] bg-emerald-500/20 dark:bg-emerald-500/10 rounded-full blur-[120px]"></div>
+            </div>
 
+            <div className="w-full pt-[10vh] pb-16 relative z-10">
                 <div className="max-w-screen-xl m-auto flex flex-col px-4 lg:px-0 relative z-0 w-full">
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-white lg:text-start text-center">
                         Work <span className="bg-gradient-to-r bg-clip-text from-darkAccent to-primary-700 text-transparent">Experiences</span>
@@ -153,64 +156,84 @@ export default function AboutMe() {
             <div className="w-full pb-24 relative z-0">
                 <div className="max-w-screen-xl w-full m-auto px-4 lg:px-0 relative z-10 lg:pl-10">
                     <ol className="relative text-[#757575] border-l border-gray-200 dark:border-[#374251] dark:text-gray-400 mx-10">
-                        {visibleData.map((item, idx) => (
-                            <li key={`about-${idx}`} className="mb-4 ml-6">
-                                <span
-                                    className={twMerge(
-                                        "absolute flex items-center justify-center w-8 h-8 bg-primary-200 rounded-full -left-4 ring-4 ring-background dark:ring-background dark:bg-primary-900",
-                                        idx !== 0 && "bg-gray-100 dark:bg-[#374251]"
-                                    )}
+                        <AnimatePresence initial={false}>
+                            {visibleData.map((item, idx) => (
+                                <motion.li
+                                    key={item.title}
+                                    className="mb-4 ml-6"
+                                    initial={{ opacity: 0, height: 0, overflow: 'hidden' }}
+                                    animate={{ opacity: 1, height: 'auto', overflow: 'visible' }}
+                                    exit={{ opacity: 0, height: 0, overflow: 'hidden' }}
+                                    transition={{ duration: 0.3 }}
                                 >
-                                    {idx === 0 && (
-                                        <svg
-                                            aria-hidden="true"
-                                            className="w-5 h-5 text-white dark:text-primary-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fillRule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clipRule="evenodd"
-                                            ></path>
-                                        </svg>
-                                    )}
-                                </span>
-                                <div className="space-y-4 pt-2">
-                                    <div className="flex justify-between">
-                                        <h2 className="text-gray-700 dark:text-gray-100 leading-tight font-semibold">
-                                            {item.title}
-                                        </h2>
-                                        <span className="text-[#757575] text-xs font-semibold dark:text-gray-600 text-right">
-                                            {item.timeline}
-                                        </span>
-                                    </div>
-                                    <p className="text-sm text-justify whitespace-pre-line text-[#757575] dark:text-gray-400">
-                                        {item.desc}
-                                    </p>
-                                    {item.stacks && item.stacks.length > 0 && (
-                                        <div className="flex gap-2 flex-wrap">
-                                            {item.stacks.map((val, stackIdx) => (
-                                                <span
-                                                    key={`about-badge-${idx}-${stackIdx}`}
-                                                    className={twMerge(
-                                                        "px-3 py-1 rounded-full border border-primary-500/40 text-xs font-medium backdrop-blur-md text-gray-700 dark:text-gray-200 bg-white/60 dark:bg-[#111827]/60 shadow-[0_0_10px_rgba(3,169,244,0.15)]"
-                                                    )}
-                                                >
-                                                    {val}
-                                                </span>
-                                            ))}
+                                    <span
+                                        className={twMerge(
+                                            "absolute flex items-center justify-center w-8 h-8 bg-primary-200 rounded-full -left-4 ring-4 ring-background dark:ring-background dark:bg-primary-900",
+                                            idx !== 0 && "bg-gray-100 dark:bg-[#374251]"
+                                        )}
+                                    >
+                                        {idx === 0 && (
+                                            <svg
+                                                aria-hidden="true"
+                                                className="w-5 h-5 text-white dark:text-primary-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fillRule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clipRule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        )}
+                                    </span>
+                                    <div className="space-y-4 pt-2">
+                                        <div className="flex justify-between">
+                                            <h2 className="text-gray-700 dark:text-gray-100 leading-tight font-semibold">
+                                                {item.title}
+                                            </h2>
+                                            <span className="text-[#757575] text-xs font-semibold dark:text-gray-600 text-right">
+                                                {item.timeline}
+                                            </span>
                                         </div>
-                                    )}
-                                </div>
-                            </li>
-                        ))}
+                                        <p className="text-sm text-justify whitespace-pre-line text-[#757575] dark:text-gray-400">
+                                            {item.desc}
+                                        </p>
+                                        {item.stacks && item.stacks.length > 0 && (
+                                            <div className="flex gap-2 flex-wrap">
+                                                {item.stacks.map((val, stackIdx) => (
+                                                    <span
+                                                        key={`about-badge-${item.title}-${stackIdx}`}
+                                                        className={twMerge(
+                                                            "px-3 py-1 rounded-full border border-primary-500/40 text-xs font-medium backdrop-blur-md text-gray-700 dark:text-gray-200 bg-white/60 dark:bg-[#111827]/60 shadow-[0_0_10px_rgba(3,169,244,0.15)]"
+                                                        )}
+                                                    >
+                                                        {val}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                </motion.li>
+                            ))}
+                        </AnimatePresence>
                     </ol>
                     {datas.length > 3 && (
                         <div className="mx-10 mt-6 flex justify-center lg:justify-start">
                             <button
-                                onClick={() => setIsExpanded(!isExpanded)}
+                                onClick={() => {
+                                    if (isExpanded) {
+                                        setTimeout(() => {
+                                            const element = document.getElementById("experiences");
+                                            if (element) {
+                                                const y = element.getBoundingClientRect().top + window.scrollY - 100;
+                                                window.scrollTo({ top: y, behavior: "smooth" });
+                                            }
+                                        }, 300);
+                                    }
+                                    setIsExpanded(!isExpanded);
+                                }}
                                 className="text-sm font-semibold text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors uppercase flex items-center gap-2"
                             >
                                 {isExpanded ? "Show Less" : "Read More"}
