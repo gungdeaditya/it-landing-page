@@ -24,7 +24,7 @@ const technologies = [
 
 export default function Hero() {
     return (
-        <section className="min-h-screen max-w-7xl flex flex-col justify-center m-auto px-4 2xl:px-0 relative pt-20 lg:pt-0">
+        <section id="home" className="min-h-screen max-w-7xl flex flex-col justify-center m-auto px-4 2xl:px-0 relative pt-20 lg:pt-0">
             {/* Background applies globally from Layout */}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-0 w-full mt-10 xl:-mt-10">

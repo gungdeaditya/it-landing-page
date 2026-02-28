@@ -69,7 +69,7 @@ const Footer = ({ pathname = "" }: { pathname?: string }) => {
                             </defs>
                             <text className="text-[12px] font-bold uppercase font-montserrat tracking-[0.25em]">
                                 <textPath href="#circlePath" startOffset="0%">
-                                    SEND ME AN EMAIL / SEND ME AN EMAIL /
+                                    / SEND AN EMAIL / SEND AN EMAIL /
                                 </textPath>
                             </text>
                         </svg>

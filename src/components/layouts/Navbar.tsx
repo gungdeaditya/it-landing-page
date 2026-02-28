@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import { AnimatePresence, motion } from "framer-motion";
@@ -7,6 +7,30 @@ import LampButton from "../buttons/LampButton";
 
 export default function Navbar() {
     const [openMenus, setOpenMenus] = useState(false);
+    const [activeSection, setActiveSection] = useState("home");
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { rootMargin: "-40% 0px -40% 0px" }
+        );
+
+        const sectionIds = ["home", "projects", "experiences", "tech-stack", "contact"];
+        sectionIds.forEach((id) => {
+            const element = document.getElementById(id);
+            if (element) {
+                observer.observe(element);
+            }
+        });
+
+        return () => observer.disconnect();
+    }, []);
 
     const closeMenus = () => setOpenMenus(false);
 
@@ -31,19 +55,19 @@ export default function Navbar() {
                     <nav aria-label="Site Nav" className="hidden lg:block">
                         <ul className="flex items-center gap-6 text-sm font-semibold">
                             <li>
-                                <NavLink href="#home">Home</NavLink>
+                                <NavLink href="#home" isActive={activeSection === "home" || activeSection === ""}>Home</NavLink>
                             </li>
                             <li>
-                                <NavLink href="#projects">Projects</NavLink>
+                                <NavLink href="#projects" isActive={activeSection === "projects"}>Projects</NavLink>
                             </li>
                             <li>
-                                <NavLink href="#experiences">Experiences</NavLink>
+                                <NavLink href="#experiences" isActive={activeSection === "experiences"}>Experiences</NavLink>
                             </li>
                             <li>
-                                <NavLink href="#tech-stack">Tech Stack</NavLink>
+                                <NavLink href="#tech-stack" isActive={activeSection === "tech-stack"}>Tech Stack</NavLink>
                             </li>
                             <li>
-                                <NavLink href="#contact">Contact Me</NavLink>
+                                <NavLink href="#contact" isActive={activeSection === "contact"}>Contact Me</NavLink>
                             </li>
                         </ul>
                     </nav>
@@ -75,27 +99,27 @@ export default function Navbar() {
                     >
                         <ul className="flex flex-col gap-6 text-sm font-semibold w-full pt-6 px-2">
                             <li>
-                                <NavLink href="#home" onClick={closeMenus}>
+                                <NavLink href="#home" onClick={closeMenus} isActive={activeSection === "home" || activeSection === ""}>
                                     Home
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="#projects" onClick={closeMenus}>
+                                <NavLink href="#projects" onClick={closeMenus} isActive={activeSection === "projects"}>
                                     Projects
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="#experiences" onClick={closeMenus}>
+                                <NavLink href="#experiences" onClick={closeMenus} isActive={activeSection === "experiences"}>
                                     Experiences
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="#tech-stack" onClick={closeMenus}>
+                                <NavLink href="#tech-stack" onClick={closeMenus} isActive={activeSection === "tech-stack"}>
                                     Tech Stack
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="#contact" onClick={closeMenus}>
+                                <NavLink href="#contact" onClick={closeMenus} isActive={activeSection === "contact"}>
                                     Contact Me
                                 </NavLink>
                             </li>
