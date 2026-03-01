@@ -141,8 +141,7 @@ export default function AboutMe() {
     return (
         <section id="experiences" className="relative flex flex-col items-center scroll-mt-24 w-full">
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-rose-500/20 dark:bg-rose-500/10 rounded-full blur-[130px]"></div>
-                <div className="absolute -bottom-[100px] -left-[50px] w-[450px] h-[450px] bg-amber-500/20 dark:bg-amber-500/10 rounded-full blur-[110px]"></div>
+                <div className="absolute -bottom-[100px] -left-[50px] w-[450px] h-[450px] bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-[110px]"></div>
             </div>
 
             <div className="w-full pt-[10vh] pb-16 relative z-10">

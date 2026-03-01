@@ -141,8 +141,8 @@ export function RecentWorkSection() {
     return (
         <section id="projects" className="relative flex flex-col items-center scroll-mt-24 w-full">
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-[10%] -left-[200px] w-[500px] h-[500px] bg-purple-500/20 dark:bg-purple-500/10 rounded-full blur-[120px]"></div>
-                <div className="absolute bottom-[10%] -right-[100px] w-[400px] h-[400px] bg-indigo-500/20 dark:bg-indigo-500/10 rounded-full blur-[100px]"></div>
+                <div className="absolute top-[10%] -left-[200px] w-[500px] h-[500px] bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-[120px]"></div>
+                <div className="absolute bottom-[10%] -right-[100px] w-[400px] h-[400px] bg-sky-500/20 dark:bg-sky-500/10 rounded-full blur-[100px]"></div>
             </div>
 
             <div className="w-full pt-[10vh] pb-16 relative z-10">
@@ -318,7 +318,7 @@ export function TechStackSection() {
         <section id="tech-stack" className="relative flex flex-col items-center w-full scroll-mt-24">
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-[50%] -left-[150px] w-[600px] h-[600px] bg-blue-500/20 dark:bg-blue-500/10 rounded-full blur-[140px]"></div>
-                <div className="absolute -top-[50px] right-[50px] w-[400px] h-[400px] bg-teal-500/20 dark:bg-teal-500/10 rounded-full blur-[100px]"></div>
+                <div className="absolute -top-[50px] right-[50px] w-[400px] h-[400px] bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-[100px]"></div>
             </div>
 
             <div className="w-full pt-[10vh] pb-16 relative z-10">
