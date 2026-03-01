@@ -227,7 +227,7 @@ export function RecentWorkSectionHover() {
         <section className="min-h-screen flex items-center pt-10">
             <div className="max-w-screen-xl m-auto flex flex-col items-center px-4 lg:px-0">
                 <h2 className="text-4xl font-bold">My Recent Work</h2>
-                <p className="w-screen-lg text-center mt-10 text-[#757575] dark:text-gray-400">
+                <p className="max-w-5xl text-center mt-10 text-[#757575] dark:text-gray-400">
                     {`Here are a few past design projects I've worked on. Want to see more?
             Email me.`}
                 </p>

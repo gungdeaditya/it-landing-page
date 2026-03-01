@@ -49,7 +49,7 @@ export default function Navbar() {
     return (
         <header
             aria-label="Site Header"
-            className="bg-white/70 dark:bg-[#111827]/70 backdrop-blur-md border-b-[1px] border-primary-500/10 dark:border-primary-500/20 fixed w-screen z-10 py-6 px-4 xl:px-0 shadow-sm lg:shadow-none transition-all duration-200"
+            className="bg-white/70 dark:bg-[#111827]/70 backdrop-blur-md border-b-[1px] border-primary-500/10 dark:border-primary-500/20 fixed w-full z-10 py-6 px-4 xl:px-0 shadow-sm lg:shadow-none transition-all duration-200"
         >
             <div className="mx-auto max-w-screen-xl flex items-center justify-between">
                 <div className="flex space-x-2">
