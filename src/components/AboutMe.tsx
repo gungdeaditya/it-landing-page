@@ -141,20 +141,20 @@ export default function AboutMe() {
     return (
         <section id="experiences" className="relative flex flex-col items-center scroll-mt-24 w-full">
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -top-[100px] -left-[100px] w-[400px] h-[400px] bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-[120px]"></div>
-                <div className="absolute top-[30%] -right-[150px] w-[500px] h-[500px] bg-emerald-500/20 dark:bg-emerald-500/10 rounded-full blur-[120px]"></div>
+                <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-rose-500/20 dark:bg-rose-500/10 rounded-full blur-[130px]"></div>
+                <div className="absolute -bottom-[100px] -left-[50px] w-[450px] h-[450px] bg-amber-500/20 dark:bg-amber-500/10 rounded-full blur-[110px]"></div>
             </div>
 
             <div className="w-full pt-[10vh] pb-16 relative z-10">
-                <div className="max-w-screen-xl m-auto flex flex-col px-4 lg:px-0 relative z-0 w-full">
+                <div className="max-w-7xl m-auto flex flex-col px-4 lg:px-0 relative z-0 w-full">
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-white lg:text-start text-center">
-                        Work <span className="bg-gradient-to-r bg-clip-text from-darkAccent to-primary-700 text-transparent">Experiences</span>
+                        Work <span className="bg-linear-to-r bg-clip-text from-darkAccent to-primary-700 text-transparent">Experiences</span>
                     </h2>
                 </div>
             </div>
 
             <div className="w-full pb-24 relative z-0">
-                <div className="max-w-screen-xl w-full m-auto px-4 lg:px-0 relative z-10 lg:pl-10">
+                <div className="max-w-7xl w-full m-auto px-4 lg:px-0 relative z-10 lg:pl-10">
                     <ol className="relative text-[#757575] border-l border-gray-200 dark:border-[#374251] dark:text-gray-400 mx-10">
                         <AnimatePresence initial={false}>
                             {visibleData.map((item, idx) => (
