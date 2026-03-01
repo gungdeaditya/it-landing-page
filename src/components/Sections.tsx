@@ -145,7 +145,7 @@ export function RecentWorkSection() {
                 <div className="absolute bottom-[10%] -right-[100px] w-[400px] h-[400px] bg-sky-500/20 dark:bg-sky-500/10 rounded-full blur-[100px]"></div>
             </div>
 
-            <div className="w-full pt-[10vh] pb-16 relative z-10">
+            <div className="w-full pb-16 relative z-10">
                 <div className="max-w-screen-xl m-auto flex flex-col px-4 lg:px-0 relative z-0 w-full">
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
                         Projects <span className="bg-gradient-to-r bg-clip-text from-darkAccent to-primary-700 text-transparent">Showcase</span>
@@ -343,7 +343,7 @@ export function TechStackSection() {
                         {datas.map((item, index) => (
                             <div
                                 key={`tech-stack-${index}`}
-                                className="col-span-1 flex flex-col items-center px-10 py-10 lg:py-20 space-y-6"
+                                className="col-span-1 flex flex-col items-center px-6 lg:px-10 py-10 lg:py-20 space-y-6"
                             >
                                 <div className="w-[72px] h-[72px] rounded-full bg-customAccent dark:bg-darkAccent flex items-center justify-center">
                                     {item.icon}
